@@ -79,7 +79,7 @@ fun maxSubArray(nums: IntArray): Int {
 
 fun productExceptSelf(nums: IntArray): IntArray {
     val n = nums.size
-    val result = IntArray(n) { 1 }
+    val result = IntArray(n) 
 
     // Step 1: Left products
     var left = 1
@@ -129,3 +129,48 @@ fun setZeroes(matrix: MutableList<MutableList<Int>>) {
         }
     }
 }
+
+fun spiralOrder(matrix: Array<IntArray>): List<Int> {
+      
+    val result = mutableListOf<Int>()
+    if (matrix.isEmpty() || matrix[0].isEmpty()) return result
+
+    var top = 0
+    var bottom = matrix.size - 1
+    var left = 0
+    var right = matrix[0].size - 1
+
+    while (left <= right && top <= bottom) {
+
+        // Traverse top row
+        for (i in left..right) {
+            result.add(matrix[top][i])
+        }
+        top++
+
+        // Traverse right column
+        for (i in top..bottom) {
+            result.add(matrix[i][right])
+        }
+        right--
+
+        // Traverse bottom row
+        if (top <= bottom) {
+            for (i in right downTo left) {
+                result.add(matrix[bottom][i])
+            }
+            bottom--
+        }
+
+        // Traverse left column
+        if (left <= right) {
+            for (i in bottom downTo top) {
+                result.add(matrix[i][left])
+            }
+            left++
+        }
+        
+        }
+         return result
+
+    }
