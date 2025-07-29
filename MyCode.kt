@@ -53,33 +53,31 @@ fun moveZeroes(nums: IntArray): Unit {
     }
 }
 
- fun findDuplicate(nums: IntArray): Int {
-      
-      val unique = mutableSetOf<Int>()
+fun findDuplicate(nums: IntArray): Int {
 
-        for (num in nums){
-            if(num in unique ) return num
-            unique.add(num)
-        }
-        
-        return -1
+    val unique = mutableSetOf<Int>()
+
+    for (num in nums) {
+        if (num in unique) return num
+        unique.add(num)
     }
 
+    return -1
+}
 
-    fun  maxSubArray(nums:IntArray) : Int{
-      var currentsum = nums[0]
-      var largestSum = nums[0]
-      
-      for(i in 1 until nums.size){
-          
-          currentsum = maxOf(nums[i], currentsum + nums[i])
-          largestSum = maxOf(largestSum, currentsum)
-      }
-      return largestSum
-      
-  }
+fun maxSubArray(nums: IntArray): Int {
+    var currentsum = nums[0]
+    var largestSum = nums[0]
 
-  fun productExceptSelf(nums: IntArray): IntArray {
+    for (i in 1 until nums.size) {
+
+        currentsum = maxOf(nums[i], currentsum + nums[i])
+        largestSum = maxOf(largestSum, currentsum)
+    }
+    return largestSum
+}
+
+fun productExceptSelf(nums: IntArray): IntArray {
     val n = nums.size
     val result = IntArray(n) { 1 }
 
@@ -100,5 +98,34 @@ fun moveZeroes(nums: IntArray): Unit {
     return result
 }
 
+fun setZeroes(matrix: MutableList<MutableList<Int>>) {
+    val rows = matrix.size
+    val cols = matrix[0].size
 
-    
+    val rowSet = mutableSetOf<Int>()
+    val colSet = mutableSetOf<Int>()
+
+    // First pass: record all rows and columns that have a 0
+    for (i in 0 until rows) {
+        for (j in 0 until cols) {
+            if (matrix[i][j] == 0) {
+                rowSet.add(i)
+                colSet.add(j)
+            }
+        }
+    }
+
+    // Second pass: set rows to zero
+    for (i in rowSet) {
+        for (j in 0 until cols) {
+            matrix[i][j] = 0
+        }
+    }
+
+    // Third pass: set columns to zero
+    for (j in colSet) {
+        for (i in 0 until rows) {
+            matrix[i][j] = 0
+        }
+    }
+}
