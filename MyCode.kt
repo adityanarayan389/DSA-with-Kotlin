@@ -174,3 +174,95 @@ fun spiralOrder(matrix: Array<IntArray>): List<Int> {
          return result
 
     }
+
+
+
+    fun generate(numRows: Int): List<List<Int>> {
+    val triangle = mutableListOf<List<Int>>()
+
+    for (i in 0 until numRows) {
+        val row = mutableListOf<Int>()
+
+        for (j in 0..i) {
+            if (j == 0 || j == i) {
+                row.add(1)
+            } else {
+                val value = triangle[i - 1][j - 1] + triangle[i - 1][j]
+                row.add(value)
+            }
+        }
+
+        triangle.add(row)
+    }
+
+    return triangle
+}
+
+//To print a particular item of Pascal's Triangle at row i and column j, there are two main ways:
+fun particularPascalValue(row: Int, col: Int): Long {
+    if (row < 0 || col > row) return -1
+
+    return factorial(row) / (factorial(col) * factorial(row - col))
+}
+
+fun factorial(n: Int): Long {
+    var result = 1L
+    for (i in 2..n) {
+        result *= i
+    }
+    return result
+}
+
+fun nthRow(n: Int): List<Long> {
+    val row = mutableListOf<Long>()
+    for (j in 0..n) {
+        row.add(particularPascalValue(n, j))
+    }
+    return row
+}
+
+
+// find all the permutation of array
+
+fun permute(arr: List<Int>, start: Int, result: MutableList<List<Int>>) {
+    if (start == arr.size) {
+        result.add(arr.toList())
+        return
+    }
+    for (i in start until arr.size) {
+        val swapped = arr.toMutableList()
+        val temp = swapped[start]
+        swapped[start] = swapped[i]
+        swapped[i] = temp
+
+    
+        permute(swapped, start + 1, result)
+    }
+}
+
+
+
+fun isPalindrome(s: String): Boolean {
+    var left = 0
+    var right = s.length - 1
+
+    while (left < right) {
+        // Move left to next alphanumeric
+        while (left < right && !s[left].isLetterOrDigit()) {
+            left++
+        }
+        // Move right to previous alphanumeric
+        while (left < right && !s[right].isLetterOrDigit()) {
+            right--
+        }
+
+        if (s[left].lowercaseChar() != s[right].lowercaseChar()) {
+            return false
+        }
+
+        left++
+        right--
+    }
+
+    return true
+}
