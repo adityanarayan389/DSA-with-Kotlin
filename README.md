@@ -75,6 +75,58 @@ Reverse Nodes in k-Group (LC #25)
 Swap Nodes in Pairs (LC #24)
 Merge K Sorted Lists (LC #23)
 
+
+
+📗 Easy
+Valid Parentheses
+→ Given a string of ()[]{}, check if brackets are valid.
+(LeetCode #20)
+Min Stack
+→ Implement a stack with push, pop, top, and getMin in O(1).
+(LeetCode #155)
+Implement Stack using Queues
+→ Use only queue operations to implement a stack.
+(LeetCode #225)
+Implement Queue using Stacks
+→ Use only stack operations to implement a queue.
+(LeetCode #232)
+Next Greater Element I
+→ Given two arrays, find the next greater number for elements of the first array in the second array.
+(LeetCode #496)
+📘 Medium
+Daily Temperatures
+→ Given temperatures, return days to wait until warmer temp.
+(LeetCode #739)
+Evaluate Reverse Polish Notation (Postfix Expression)
+→ Evaluate arithmetic expression in postfix form.
+(LeetCode #150)
+Decode String
+→ Decode pattern like "3[a2[c]]" → "accaccacc".
+(LeetCode #394)
+Basic Calculator II
+→ Implement a basic calculator for +, -, *, /.
+(LeetCode #227)
+Next Greater Element II
+→ Circular array version of Next Greater Element.
+(LeetCode #503)
+📕 Hard
+Largest Rectangle in Histogram
+→ Find largest rectangle area in a histogram using stack.
+(LeetCode #84)
+Maximal Rectangle
+→ Given a binary matrix, find the largest rectangle containing only 1’s.
+(LeetCode #85)
+Remove K Digits
+→ Given a number string, remove k digits to get smallest possible number.
+(LeetCode #402)
+Trapping Rain Water (Stack approach)
+→ Calculate trapped water between bars.
+(LeetCode #42)
+Shortest Subarray with Sum at Least K (Monotonic Queue / Deque)
+→ Find shortest subarray length with sum ≥ K.
+(LeetCode #862)
+
+
 📌 Trees & Graphs (15 Questions)
 Binary Tree Inorder Traversal (LC #94)
 Binary Tree Level Order Traversal (LC #102)
