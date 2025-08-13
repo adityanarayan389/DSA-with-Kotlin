@@ -144,3 +144,14 @@ Find Bridges in a Graph (Tarjan’s Algorithm)
 Find Articulation Points in a Graph
 Word Ladder (LC #127)
 
+
+Day 2 — Sliding Window
+Permutation in String (LC 567)
+Find All Anagrams in a String (LC 438)
+Maximum Average Subarray I (LC 643)
+Longest Repeating Character Replacement (LC 424)
+Fruit Into Baskets (LC 904)
+Max Consecutive Ones III (LC 1004)
+Sliding Window Maximum (LC 239)
+Trapping Rain Water (LC 42)
+
