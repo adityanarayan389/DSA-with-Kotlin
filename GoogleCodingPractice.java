@@ -68,7 +68,7 @@ public class GoogleCodingPractice {
         return true;
     }
 
-    public static int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstringWithoutRepeating(String s) {
 
         Map<Character, Integer> map = new HashMap<>();
 
@@ -341,4 +341,126 @@ public int characterReplacement(String s, int k) {
 
 }
 
+//Fruit Into Baskets
+
+
+public int totalFruit(int[] fruits) {
+
+        HashMap<Integer , Integer> countmap= new HashMap();
+        int left = 0;
+        int right = 0;
+        int maxlen =0;
+
+        while(right < fruits.length){
+            countmap.put(fruits[right], countmap.getOrDefault(fruits[right],0)+1);
+            while(countmap.size() > 2){
+                 countmap.put(fruits[left], countmap.get(fruits[left]) - 1);
+
+                 if(countmap.get(fruits[left]) == 0){
+                    countmap.remove(fruits[left]);
+                 }
+                 left ++;
+
+            }
+
+           maxlen = Math.max(maxlen, right - left + 1);
+           right ++;
+
+
+        }
+
+        return maxlen;
+        
+
+
+
+    }
+
+//Max Consecutive Ones III
+
+    public int longestOnes(int[] nums, int k) {
+
+        int left = 0, right = 0;
+    int zeroCount = 0;
+    int maxLen = 0;
+
+    while (right < nums.length) {
+        if (nums[right] == 0) {
+            zeroCount++;
+        }
+
+        while (zeroCount > k) {
+            if (nums[left] == 0) {
+                zeroCount--;
+            }
+            left++;
+        }
+
+        maxLen = Math.max(maxLen, right - left + 1);
+        right++;
+    }
+
+    return maxLen;
+        
+    }
+//Minimum Window Substring
+
+public String minWindow(String s, String t) {
+
+     if (s.length() < t.length()) return "";
+
+    int[] need = new int[128];
+    for (char c : t.toCharArray()) {
+        need[c]++;
+    }
+
+    int[] window = new int[128];
+    int required = 0;
+    for (int val : need) {
+        if (val > 0) required++;
+    }
+
+    int left = 0, right = 0, matchCount = 0;
+    int minLen = Integer.MAX_VALUE, startIdx = 0;
+
+    while (right < s.length()) {
+        char cRight = s.charAt(right);
+        window[cRight]++;
+
+        if ( window[cRight] == need[cRight]) {
+            matchCount++;
+        }
+
+        while (matchCount == required) {
+            // Update answer
+            if (right - left + 1 < minLen) {
+                minLen = right - left + 1;
+                startIdx = left;
+            }
+
+            char cLeft = s.charAt(left);
+            window[cLeft]--;
+            if ( window[cLeft] < need[cLeft]) {
+                matchCount--;
+            }
+            left++;
+        }
+
+        right++;
+    }
+
+return minLen == Integer.MAX_VALUE ? "" : s.substring(startIdx, startIdx + minLen);
+
+        
+    }
+
+
+    
+
+
+
+
 }
+
+
+
