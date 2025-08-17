@@ -1,3 +1,6 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class QueueDataStructure {
 
     public static void main(String[] args) {
@@ -115,6 +118,41 @@ public class QueueDataStructure {
         return size;
     }
 }
+//Sliding Window Maximum
+
+
+public int[] maxSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return new int[0];
+
+        int n = nums.length;
+        int resIndex = 0;
+        int[] result = new int[n-k+1];
+        int indices =0;
+
+        Deque<Integer> deq = new LinkedList();
+
+        while(indices < n){
+            if(!deq.isEmpty() && deq.peekFirst() <= indices - k){
+                deq.pollFirst();
+            }
+
+              while(!deq.isEmpty() && nums[deq.peekLast()] < nums[indices]){
+                deq.pollLast();
+              }
+
+            deq.offerLast(indices);
+
+            if(indices >= k-1){
+                 result[resIndex++] = nums[deq.peekFirst()];
+
+            }
+            indices++;
+
+
+        }
+        return result;
+        
+    }
 
 
 }
