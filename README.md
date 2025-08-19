@@ -155,3 +155,19 @@ Max Consecutive Ones III (LC 1004)
 Sliding Window Maximum (LC 239)
 Trapping Rain Water (LC 42)
 
+
+
+🔹 LeetCode Problems
+215. Kth Largest Element in an Array
+→ Classic Quickselect / Heap problem.
+75. Sort Colors
+→ Dutch National Flag problem (3-way partition, variation of QuickSort).
+973. K Closest Points to Origin
+→ Can be solved using Quickselect instead of Heap.
+324. Wiggle Sort II
+→ Uses Quickselect to find median + rearrange.
+347. Top K Frequent Elements
+→ Heap or Quickselect can be used.
+912. Sort an Array
+→ Implement sorting algorithms (QuickSort is one option).
+
