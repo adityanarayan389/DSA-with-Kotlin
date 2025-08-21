@@ -211,5 +211,39 @@ public class StackDataStructure {
 
         return stack.pop();
     }
+    // Largest Rectangle in Histogram
+
+    public int largestRectangleArea(int[] heights) {
+        int n = heights.length;
+        Stack<Integer> stack = new Stack<>();
+        int maxArea = 0;
+
+        for (int i = 0; i <= n; i++) {
+            int h = (i == n) ? 0 : heights[i]; // add extra 0 at end
+            while (!stack.isEmpty() && h < heights[stack.peek()]) {
+                int height = heights[stack.pop()];
+                int width = stack.isEmpty() ? i : i - stack.peek() - 1;
+                maxArea = Math.max(maxArea, height * width);
+            }
+            stack.push(i);
+        }
+        return maxArea;
+    }
+
+    public int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        int[] ans = new int[n];
+        Stack<Integer> stack = new Stack<>(); // stores indexes
+
+        for (int i = 0; i < n; i++) {
+            // While current temp > temp at index on stack
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int prev = stack.pop();
+                ans[prev] = i - prev; // distance between days
+            }
+            stack.push(i); // store index
+        }
+        return ans;
+    }
 
 }

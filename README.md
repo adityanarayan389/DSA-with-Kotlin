@@ -206,3 +206,7 @@ Min-heap to merge efficiently.
 Task Scheduler (LC 621)
 Greedy + max-heap.
 
+Stack: LC 20, LC 84, LC 739
+Queue: LC 239, LC 994
+Heap: LC 215, LC 973, LC 347, LC 295
+
