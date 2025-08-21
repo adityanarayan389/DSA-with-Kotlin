@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 public class GoogleCodingPractice {
     public static void main(String[] args) {
@@ -566,6 +568,36 @@ public class GoogleCodingPractice {
         }
         return low;
 
+    }
+
+    //K Closest Points to Origin
+
+     public int[][] kClosest(int[][] points, int k) {
+         PriorityQueue<int[]> maxHeap = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] a, int[] b) {
+                return distance(b) - distance(a); // bigger distance comes first
+            }
+        });
+
+        for (int[] point : points) {
+            maxHeap.offer(point);
+            if (maxHeap.size() > k) {
+                maxHeap.poll(); // remove farthest point
+            }
+        }
+
+        int[][] result = new int[k][2];
+        for (int i = 0; i < k; i++) {
+            result[i] = maxHeap.poll();
+        }
+        return result;
+
+            
+        
+     }
+      private int distance(int[] point) {
+        return point[0] * point[0] + point[1] * point[1];
     }
 
 }

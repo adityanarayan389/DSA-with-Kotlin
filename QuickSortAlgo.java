@@ -52,48 +52,58 @@ public class QuickSortAlgo {
 //kth largest element
 
 
- public static int findKthLargest(int[] nums, int k) {
+
+    public int findKthLargest(int[] nums, int k) {
         int n = nums.length;
         return quickSelect(nums, 0, n - 1, n - k);
     }
 
-    private static int quickSelect(int[] nums, int left, int right, int kSmallest) {
-        if (left == right) return nums[left];
+    private int quickSelect(int[] arr, int left, int right, int targetIdx) {
+        if (left == right) {
+            return arr[left];
+        }
 
+        // Randomized pivot to avoid worst case
         Random rand = new Random();
         int pivotIndex = left + rand.nextInt(right - left + 1);
 
-        pivotIndex = partition(nums, left, right, pivotIndex);
+        pivotIndex = partition(arr, left, right, pivotIndex);
 
-        if (pivotIndex == kSmallest) {
-            return nums[pivotIndex];
-        } else if (pivotIndex < kSmallest) {
-            return quickSelect(nums, pivotIndex + 1, right, kSmallest);
+        if (pivotIndex == targetIdx) {
+            return arr[pivotIndex];
+        } else if (pivotIndex < targetIdx) {
+            return quickSelect(arr, pivotIndex + 1, right, targetIdx);
         } else {
-            return quickSelect(nums, left, pivotIndex - 1, kSmallest);
+            return quickSelect(arr, left, pivotIndex - 1, targetIdx);
         }
     }
 
-    private static int partition(int[] nums, int left, int right, int pivotIndex) {
-        int pivot = nums[pivotIndex];
-        swap(nums, pivotIndex, right);
+    private int partition(int[] arr, int left, int right, int pivotIndex) {
+        int pivot = arr[pivotIndex];
+
+        // Move pivot to end
+        swap(arr, pivotIndex, right);
         int storeIndex = left;
 
         for (int i = left; i < right; i++) {
-            if (nums[i] < pivot) {
-                swap(nums, storeIndex, i);
+            if (arr[i] < pivot) {
+                swap(arr, i, storeIndex);
                 storeIndex++;
             }
         }
-        swap(nums, storeIndex, right);
+
+        // Move pivot to its final place
+        swap(arr, storeIndex, right);
+
         return storeIndex;
     }
 
-    private static void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
+    private void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
+
 
 
 }

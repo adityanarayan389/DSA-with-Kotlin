@@ -171,3 +171,38 @@ Trapping Rain Water (LC 42)
 912. Sort an Array
 → Implement sorting algorithms (QuickSort is one option).
 
+
+🔹 Stack Questions
+Valid Parentheses (LC 20) ✅
+Use stack to check matching brackets.
+Min Stack (LC 155) ✅
+Design stack supporting push, pop, top, and retrieving min in O(1).
+Evaluate Reverse Polish Notation (LC 150)
+Use stack to evaluate postfix expressions.
+Daily Temperatures (LC 739)
+Next greater element problem with stack.
+Largest Rectangle in Histogram (LC 84) 🔥
+Classic stack problem, asked in FAANG.
+🔹 Queue Questions
+Implement Queue using Stacks (LC 232) ✅
+Classic interview Q.
+Implement Stack using Queues (LC 225)
+Design Circular Queue (LC 622)
+Sliding Window Maximum (LC 239) 🔥
+Monotonic deque problem (common in interviews).
+Rotting Oranges (LC 994)
+BFS using queue.
+🔹 Heap / Priority Queue Questions
+Kth Largest Element in an Array (LC 215) ✅
+Min-heap or Quickselect.
+K Closest Points to Origin (LC 973) ✅
+Max-heap or Quickselect.
+Top K Frequent Elements (LC 347) 🔥
+Min-heap + hashmap.
+Find Median from Data Stream (LC 295) 🔥
+Two Heaps (max-heap + min-heap).
+Merge k Sorted Lists (LC 23)
+Min-heap to merge efficiently.
+Task Scheduler (LC 621)
+Greedy + max-heap.
+
