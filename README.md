@@ -23,7 +23,7 @@ Implement strStr() (LC #28)
 Valid Palindrome (LC #125)
  Valid Parentheses
 Longest Valid Parentheses
- Score of Parentheses Check for Balanced Brackets in Code
+ Score of ParenthesesCheck for Balanced Brackets in Code
 Group Anagrams (LC #49)
 Longest Palindromic Substring (LC #5)
 Zigzag Conversion (LC #6)
@@ -38,23 +38,23 @@ Find All Anagrams in a String (LC #438)
 📌 Hashing - 15 Must-Solve Problems
 🔹 Easy Level
 1️⃣ Two Sum (LC #1)
-2️⃣ Valid Anagram (LC #242) 
+2️⃣ Valid Anagram (LC #242)
 3️⃣ First Unique Character in a String (LC #387)
-4️⃣ Intersection of Two Arrays (LC #349) 
+4️⃣ Intersection of Two Arrays (LC #349)
 5️⃣ Contains Duplicate (LC #217)
 
 🔹 Medium Level
-6️⃣ Group Anagrams (LC #49) 
-7️⃣ Longest Substring Without Repeating Characters (LC #3) 
+6️⃣ Group Anagrams (LC #49)
+7️⃣ Longest Substring Without Repeating Characters (LC #3)
 8️⃣ Subarray Sum Equals K (LC #560)
-9️⃣ Find Duplicate in Array (LC #287) 
+9️⃣ Find Duplicate in Array (LC #287)
 🔟 Longest Consecutive Sequence (LC #128)
 
 🔹 Hard Level
-1️⃣1️⃣ Substring with Concatenation of All Words (LC #30) 
+1️⃣1️⃣ Substring with Concatenation of All Words (LC #30)
 1️⃣2️⃣ Palindrome Pairs (LC #336)
 1️⃣3️⃣ Top K Frequent Elements (LC #347
- 1️⃣4️⃣ Word Pattern (LC #290)
+1️⃣4️⃣ Word Pattern (LC #290)
 1️⃣5️⃣ Isomorphic Strings (LC #205)
 
 
@@ -209,4 +209,15 @@ Greedy + max-heap.
 Stack: LC 20, LC 84, LC 739
 Queue: LC 239, LC 994
 Heap: LC 215, LC 973, LC 347, LC 295
+
+
+Day 4 — Binary Search on Answers
+Kth Largest Element in an Array (LC 215)
+Median of Two Sorted Arrays (LC 4)
+Find K Closest Elements (LC 658)
+Split Array Largest Sum (LC 410)
+Capacity To Ship Packages Within D Days (LC 1011)
+Minimize Maximum of Array (LC 2439)
+Aggressive Cows (GFG)
+Allocate Minimum Number of Pages (GFG)
 
